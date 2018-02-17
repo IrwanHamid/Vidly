@@ -10,49 +10,6 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        public ActionResult Random()
-        {
-            var movie = new Movie
-            {
-                Name = "Shrek"
-            };
-
-            var customers = new List<Customer>
-            {
-                new Customer { Name="Customer 1" },
-                new Customer { Name="Customer 2" }
-            };
-
-            var randomMovieViewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(randomMovieViewModel);
-        }
-
-        public ActionResult Edit(int id)
-        {
-            return Content("id: " + id);
-        }
-
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-
-            if (String.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-
-            // Return as content just as example
-            return Content($"pageIndex: {pageIndex} & sortBy: {sortBy}");
-        }
-
-        [Route("movies/release/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content($"{year}/{month}");
-        }
+        
     }
 }
