@@ -13,8 +13,8 @@ namespace Vidly.Controllers
         {
             _customers = new List<Customer>
             {
-                new Customer { Id=1, Name="John Smith" },
-                new Customer { Id=2, Name="Marry William" }
+                new Customer { Id = 1, Name = "John Smith" },
+                new Customer { Id = 2, Name = "Marry William" }
             };
 
         }
