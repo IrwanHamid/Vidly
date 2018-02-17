@@ -2,31 +2,35 @@
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        private List<Customer> _customers;
+        private ApplicationDbContext _context;
 
         public CustomersController()
         {
-            _customers = new List<Customer>
-            {
-                new Customer { Id = 1, Name = "John Smith" },
-                new Customer { Id = 2, Name = "Marry William" }
-            };
+            _context = new ApplicationDbContext();
 
         }
-        
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ActionResult Index()
         {
-            return View(_customers);
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+
+            return View(customers);
         }
 
         public ActionResult Detail(int id)
         {
-            var customer = _customers.FirstOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
                 return HttpNotFound();
