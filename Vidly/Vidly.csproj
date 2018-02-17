@@ -217,6 +217,18 @@
     <Compile Include="Migrations\201802171106149_AddConstrainInCustomerTable.Designer.cs">
       <DependentUpon>201802171106149_AddConstrainInCustomerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802171158063_AddNameInMembershipTypeTable.cs" />
+    <Compile Include="Migrations\201802171158063_AddNameInMembershipTypeTable.Designer.cs">
+      <DependentUpon>201802171158063_AddNameInMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802171159201_SeedNameInMembershipTypeTable.cs" />
+    <Compile Include="Migrations\201802171159201_SeedNameInMembershipTypeTable.Designer.cs">
+      <DependentUpon>201802171159201_SeedNameInMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802171221066_AddBirthdateInCustomerTable.cs" />
+    <Compile Include="Migrations\201802171221066_AddBirthdateInCustomerTable.Designer.cs">
+      <DependentUpon>201802171221066_AddBirthdateInCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -323,6 +335,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802171106149_AddConstrainInCustomerTable.resx">
       <DependentUpon>201802171106149_AddConstrainInCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802171158063_AddNameInMembershipTypeTable.resx">
+      <DependentUpon>201802171158063_AddNameInMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802171159201_SeedNameInMembershipTypeTable.resx">
+      <DependentUpon>201802171159201_SeedNameInMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802171221066_AddBirthdateInCustomerTable.resx">
+      <DependentUpon>201802171221066_AddBirthdateInCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
