@@ -237,6 +237,10 @@
     <Compile Include="Migrations\201802171519028_PopulateGenreTable.Designer.cs">
       <DependentUpon>201802171519028_PopulateGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802180642311_AddDbSetOfMembershipTypeAndGenre.cs" />
+    <Compile Include="Migrations\201802180642311_AddDbSetOfMembershipTypeAndGenre.Designer.cs">
+      <DependentUpon>201802180642311_AddDbSetOfMembershipTypeAndGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -247,6 +251,8 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +318,8 @@
     <Content Include="Views\Customers\Detail.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Detail.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802171519028_PopulateGenreTable.resx">
       <DependentUpon>201802171519028_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802180642311_AddDbSetOfMembershipTypeAndGenre.resx">
+      <DependentUpon>201802180642311_AddDbSetOfMembershipTypeAndGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

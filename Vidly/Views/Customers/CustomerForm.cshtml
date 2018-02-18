@@ -1,0 +1,52 @@
+﻿@model Vidly.ViewModels.CustomerFormViewModel
+
+@{
+    ViewBag.Title = "Customer Form";
+}
+
+<h2>Customer Form</h2>
+
+@* To generate <form></form> for Post Request to Create action of CustomerController*@
+@using (Html.BeginForm("Save", "Customers"))
+{
+    @*Use Html Helper to map the form element to the Model properties.
+        By this, we will gain Data Binding with Action, Data Validation with
+        Data Annotation in the Model class, click on Label to focus on
+        its corresponding Input element*@
+    <div class="form-group">
+            @*For Bootstrap Styling*@
+        @Html.LabelFor(m => m.Customer.Name) 
+            @*m is refering to model*@
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" }) 
+            @*Adding Bootstrap styling*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId,
+                                   new SelectList(Model.MembershipTypes, "Id", "Name"),
+                                   "Select Membership Type",
+                                   new { @class = "form-control" })
+        @* First argument: Reference to model property for Data Binding *@
+        @* Second argument: Refrence to the list object, the list object Id, 
+           and the list object string*@
+        @* Third argument is additional list element, added to the top,
+           either empty string or a message to the user*@
+        @* Forth argument: Adding Bootstrap styling*@
+    </div>
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter)Subscribe to Newsletter?
+        </label>
+    </div>
+
+    @Html.HiddenFor(m=>m.Customer.Id)
+
+    <button type="submit" class="btn btn-primary" >Save</button>
+}
