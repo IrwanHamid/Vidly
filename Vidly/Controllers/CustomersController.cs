@@ -44,6 +44,7 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
 
@@ -67,8 +68,19 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(CustomerFormViewModel viewModel)
         {
+            if(!ModelState.IsValid)
+            {
+                // Repopulate MembershipTypes as the form only send 
+                // back the selected MembershipType Id
+                viewModel.MembershipTypes = _context.MembershipTypes.ToList();
+
+                return View("CustomerForm", viewModel);
+            }
+
+
             if (viewModel.Customer.Id == 0)
             {
                 //Adding a new customer object into the DbContext
